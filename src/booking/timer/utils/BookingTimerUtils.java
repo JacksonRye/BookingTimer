@@ -1,6 +1,5 @@
 package booking.timer.utils;
 
-import booking.timer.ui.PasswordModel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,10 +9,13 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashSet;
 
 public class BookingTimerUtils {
 
-    private static final int PASSWORD_LENGTH = 8;
+    static Preferences preferences = Preferences.getPreferences();
+
+    private static final int PASSWORD_LENGTH = preferences.getPasswordLength();
 
     public static Object loadWindow(URL loc, String title, Stage parentStage) {
         Object controller = null;
@@ -36,12 +38,13 @@ public class BookingTimerUtils {
         return controller;
     }
 
-    public static void generatePasswords(Integer howMany) {
-
+    public static HashSet<String> generatePasswords(Integer howMany) {
+        HashSet<String> hashSet = new HashSet<>();
         for (int i = 0; i < howMany; i++) {
             String password = RandomStringUtils.randomAlphanumeric(PASSWORD_LENGTH);
-            PasswordModel.hashSet.add(password);
+            hashSet.add(password);
         }
+        return hashSet;
     }
 
 }

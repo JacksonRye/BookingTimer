@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class DatabaseHandler {
 
-    private static final String DB_URL = "jdbc:sqlite:passwords.db;create=true";
+    private static final String DB_URL = "jdbc:sqlite:passwords.db";
     private static DatabaseHandler handler = null;
     private static Connection conn = null;
     private static Statement stmt = null;
@@ -42,8 +42,8 @@ public class DatabaseHandler {
     private void setUpPasswordTable() {
         try {
             stmt = conn.createStatement();
-            stmt.execute("CREATE TABLE IF NOT EXISTS passwords (" +
-                    "id integer PRIMARY KEY, " +
+            stmt.execute("CREATE TABLE IF NOT EXISTS PASSWORDS (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "password text NOT NULL UNIQUE" +
                     ");");
             System.out.println("password table created");

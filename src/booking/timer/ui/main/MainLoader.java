@@ -2,6 +2,7 @@ package booking.timer.ui.main;
 
 import booking.timer.database.DatabaseHandler;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -21,6 +22,11 @@ public class MainLoader extends Application {
         stage.show();
 
         new Thread(() -> DatabaseHandler.getInstance()).start();
+
+        Platform.setImplicitExit(false);
+        stage.setOnCloseRequest((e) -> {
+            e.consume();
+        });
 
 
     }

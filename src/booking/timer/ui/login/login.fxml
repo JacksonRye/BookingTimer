@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="229.0" prefWidth="364.0"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="147.0" prefWidth="305.0"
             xmlns="http://javafx.com/javafx/8.0.171" fx:controller="booking.timer.ui.login.LoginController">
     <children>
-        <JFXTextField fx:id="txtUsername" layoutX="121.0" layoutY="75.0" prefHeight="26.0" prefWidth="163.0"
-                      promptText="username" AnchorPane.bottomAnchor="168.0" AnchorPane.leftAnchor="121.0"
-                      AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="75.0"/>
-        <JFXPasswordField fx:id="txtPassword" layoutX="121.0" layoutY="168.0" onAction="#login" prefHeight="26.0"
-                          prefWidth="163.0" promptText="password" AnchorPane.bottomAnchor="75.0"
-                          AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="168.0"/>
+        <VBox layoutX="121.0" layoutY="75.0" prefHeight="181.0" prefWidth="305.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <JFXTextField fx:id="txtUsername" prefHeight="26.0" prefWidth="163.0" promptText="username">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </VBox.margin>
+                </JFXTextField>
+                <JFXPasswordField fx:id="txtPassword" onAction="#login" prefHeight="26.0" prefWidth="163.0"
+                                  promptText="password">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </VBox.margin>
+                </JFXPasswordField>
+                <HBox prefHeight="54.0" prefWidth="256.0">
+                    <children>
+                        <JFXButton onAction="#login" prefHeight="100.0" prefWidth="200.0" text="Login"/>
+                        <JFXButton onAction="#cancel" prefHeight="100.0" prefWidth="200.0" text="Cancel"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
     </children>
 </AnchorPane>

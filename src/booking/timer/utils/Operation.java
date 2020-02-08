@@ -1,5 +1,5 @@
 package booking.timer.utils;
 
 public enum Operation {
-    CLOSE
+    CLOSE, VIEW_PASSWORDS, SETTINGS
 }
