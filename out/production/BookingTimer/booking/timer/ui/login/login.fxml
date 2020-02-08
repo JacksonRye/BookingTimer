@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="229.0" prefWidth="364.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="booking.timer.ui.login.LoginController">
+   <children>
+      <JFXTextField fx:id="txtUsername" layoutX="121.0" layoutY="75.0" prefHeight="26.0" prefWidth="163.0" promptText="username" AnchorPane.bottomAnchor="168.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="75.0" />
+      <JFXPasswordField fx:id="txtPassword" layoutX="121.0" layoutY="168.0" onAction="#login" prefHeight="26.0" prefWidth="163.0" promptText="password" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="168.0" />
+   </children>
+</AnchorPane>
