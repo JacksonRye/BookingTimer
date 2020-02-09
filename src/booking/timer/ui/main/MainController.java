@@ -71,8 +71,9 @@ public class MainController implements Initializable {
                 btnCancel.addEventFilter(ActionEvent.ACTION, (event1 -> event1.consume()));
 
                 textInputDialog.show();
-                textInputDialog.setOnHiding((e) -> timeline.play());
-                timerTimeline.playFromStart();
+                textInputDialog.setOnHiding((e) -> {
+                    startTimer(new ActionEvent());
+                });
 
             }
 
