@@ -5,6 +5,7 @@ import booking.timer.ui.login.LoginController;
 import booking.timer.utils.BookingTimerUtils;
 import booking.timer.utils.Operation;
 import booking.timer.utils.Preferences;
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -84,6 +85,7 @@ public class MainController implements Initializable {
 
     @FXML
     private void startTimer(ActionEvent event) {
+        if (timeline.getStatus() == Animation.Status.RUNNING) return;
         timeline.play();
         timeSeconds.set(STARTTIME);
         timerTimeline = new Timeline();
